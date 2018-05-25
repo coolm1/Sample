@@ -12,7 +12,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { RkButton, RkCard, rkCardContent, rkCardFooter, rkCardHeader } from 'react-native-ui-kitten';
+import { RkButton, RkCard, rkCardContent, rkCardFooter, rkCardHeader, RkTextInput } from 'react-native-ui-kitten';
 
 
 const instructions = Platform.select({
@@ -26,31 +26,30 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.navBar}>
-          <Text style={styles.navBarButton}>Back</Text>
+        <View style={styles.navBar} androidStatusBarColor='#0B610B'>
+          {/* <Text style={styles.navBarButton}>Back</Text>
           <Text style={styles.navBarHeader}>Awesome App</Text>
-          <Text style={styles.navBarButton}>More</Text>
+          <Text style={styles.navBarButton}>More</Text> */}
         </View>
         <View style={styles.cardwhole}>
           <RkCard rkType='shadowed' style={styles.card}>
             <View rkCardHeader>
-              <Text>Header</Text>
+              <Text style={{ fontSize: 28, fontWeight: 'bold' }}>AgriFarm</Text>
             </View>
             <View rkCardContent>
-              <Text> quick brown fox jumps over the lazy dog</Text>
-            </View>
-            <View rkCardFooter>
-              <Text>Footer</Text>
+              <RkTextInput label='User' style={{ width: 300 }} />
+              <RkTextInput label='Password' />
+              <RkButton style={{ justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }}>Accept</RkButton>
             </View>
           </RkCard>
         </View>
-        <View style={styles.tabBar}>
+        {/* <View style={styles.tabBar}>
           <View style={[styles.tabBarButton, styles.button1]} />
           <View style={[styles.tabBarButton, styles.button2]} />
           <View style={[styles.tabBarButton, styles.button3]} />
           <View style={[styles.tabBarButton, styles.button4]} />
           <View style={[styles.tabBarButton, styles.button5]} />
-        </View>
+        </View> */}
       </View>
     );
   }
@@ -59,6 +58,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#efefef'
   },
   content: {
     flex: 1,
@@ -83,7 +83,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: 20,
     height: 64,
-    backgroundColor: '#1EAAF1'
+    backgroundColor: '#0B610B'
+    // backgroundColor: '#1EAAF1'
   },
   navBarButton: {
     color: '#FFFFFF',
